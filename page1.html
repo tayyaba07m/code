@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>My Pathani.</strong>
+                        <p>
+                            my pookie wookie dookie cookie sookie lookie yookie zookie bookie jookie hookie poopoo doodoo
+Zoozoo coocoo woowoo baby bear sugar plum pookpook bear I LOVE YOU SO MUCH. Thank you for being by my side,Thank you for always being there,
+For your support, love, and care."
+
+
+
+
+
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+            <div class="hearts">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                <div class="four"></div>
+                <div class="five"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <audio id="myAudio" controls style="display: none;">
+        <source src="./13141 (mp3cut.net).mp3" type="audio/mp3"> <!-- Adjust the file path accordingly -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        const audio = document.getElementById('myAudio');
+
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+            playAudio();
+        });
+
+        function playAudio() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>
